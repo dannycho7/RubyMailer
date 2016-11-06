@@ -1,0 +1,26 @@
+<div id="input-form">
+	<form id="admin_emailer" class="ui form" method="POST" action="/usermailer">
+		<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+		<div class="field">
+			<label for="To">To</label>
+			<input type="text" name="to">
+		</div>
+		<div class="field">
+			<label for="subject">Subject</label>
+			<input type="text" name="subject">
+		</div>
+		<div class="field">
+			<label for="body">Body:</label>
+			<textarea id="body_input" name="body"></textarea>
+		</div>
+		<div class="center-align">
+		<button type="submit">Submit</button>
+		</div>
+	</form>
+</div>
+<div id="preview-container">
+<h1>Message Preview:</h1>
+<div id="preview">
+	
+</div>
+</div>
