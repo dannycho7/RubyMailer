@@ -13,11 +13,11 @@ class UsermailerController < ApplicationController
 		@@body = rendered_body
 		@body = @@body
 		@subject = @@subject
+		UsermailerMailer.send_message(@@body,@@subject,@@to).deliver
 		render "confirmation"
 	end
 
 	def send_mail		
-		UsermailerMailer.send_message(@@body,@@subject,@@to).deliver
 		render "success"
 	end
 end
